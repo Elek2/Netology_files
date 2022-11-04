@@ -1,9 +1,9 @@
-def recipe_book(file):
+def recipe_book(file):  # Переводим текст из файла в нужный формат
 	book = {}
 	for line in file:
 		dish = line.strip('\n')
-		book[dish] = []
-		ingred_quant = file.readline()
+		book[dish] = []  # Добавляем каждое блюдо в словарь
+		ingred_quant = file.readline()  # Считываем количество блюд
 		for _ in range(int(ingred_quant)):
 			ingred = file.readline().strip('\n').split(" | ")
 			book[dish].append({'ingredient_name': ingred[0], 'quantity': ingred[1], 'measure': ingred[2]})
